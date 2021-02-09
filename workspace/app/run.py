@@ -91,7 +91,7 @@ def index():
             ],
 
             'layout': {
-                'title': ' counts of messages catogeries',
+                'title': ' counts of messages per catogeries',
                 'yaxis': {
                     'title': "Count"
                 },
