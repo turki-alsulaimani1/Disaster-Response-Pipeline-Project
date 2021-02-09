@@ -58,6 +58,8 @@ def index():
     genre_counts = df.groupby('genre').count()['message']
     genre_names = list(genre_counts.index)
     
+    catogery = df.iloc[:,4:].sum()
+    catogery_names = list(df.iloc[:,4:].columns)
     # create visuals
     # TODO: Below is an example - modify to create your own visuals
     graphs = [
@@ -78,6 +80,26 @@ def index():
                     'title': "Genre"
                 }
             }
+        },
+        {
+        
+            'data': [
+                Bar(
+                    x=catogery_names,
+                    y=catogery
+                )
+            ],
+
+            'layout': {
+                'title': ' counts of messages catogeries',
+                'yaxis': {
+                    'title': "Count"
+                },
+                'xaxis': {
+                    'title': "catogeries"
+                }
+            }
+        
         }
     ]
     
