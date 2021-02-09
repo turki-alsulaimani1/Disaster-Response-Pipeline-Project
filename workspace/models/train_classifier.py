@@ -78,7 +78,7 @@ def build_model():
         #'vect__max_features': (None, 5000, 10000),
         #'tfidf__use_idf': (True, False)
         #'mocls__estimator__n_estimators': [50, 100, 200],
-        #'clf__min_samples_split': [2, 3, 4]
+        
     }
     cv = GridSearchCV(pipeline, param_grid=parameters)"""
     return pipeline
@@ -121,7 +121,7 @@ def main():
         model.fit(X_train, Y_train)
         
         print('Evaluating model...')
-        evaluate_model(model, X_test, Y_test)       #, category_names
+        evaluate_model(model, X_test, Y_test)       
 
         print('Saving model...\n    MODEL: {}'.format(model_filepath))
         save_model(model, model_filepath)
